@@ -15,6 +15,9 @@ repositories {
     mavenLocal()
     maven { url = "https://cursemaven.com" }
     maven { url = "https://harleyoconnor.com/maven" }
+    flatDir {
+        dirs rootProject.file("..")
+    }
 }
 
 base {
