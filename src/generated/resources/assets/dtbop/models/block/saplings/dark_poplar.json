@@ -1,6 +1,6 @@
 {
   "parent": "dynamictrees:block/smartmodel/sapling",
-  "render_type": "minecraft:cutout_mipped",
+  "render_type": "cutout_mipped",
   "textures": {
     "leaves": "minecraft:block/dark_oak_leaves",
     "log": "minecraft:block/dark_oak_log"

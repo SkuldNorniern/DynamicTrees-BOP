@@ -1,6 +1,6 @@
 {
   "parent": "dynamictrees:block/smartmodel/sapling",
-  "render_type": "minecraft:cutout_mipped",
+  "render_type": "cutout_mipped",
   "textures": {
     "leaves": "biomesoplenty:block/orange_maple_leaves",
     "log": "biomesoplenty:block/maple_log"
