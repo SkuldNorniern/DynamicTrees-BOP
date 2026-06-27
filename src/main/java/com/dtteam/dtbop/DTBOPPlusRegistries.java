@@ -8,7 +8,7 @@ import com.dtteam.dynamictrees.api.worldgen.FeatureCanceller;
 import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dynamictrees.worldgen.featurecancellation.MushroomFeatureCanceller;
 import com.dtteam.dynamictreesplus.block.mushroom.CapProperties;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
@@ -19,10 +19,10 @@ import com.dtteam.dtbop.tree.GlowshroomSpecies;
 
 public class DTBOPPlusRegistries {
 
-    public static final FeatureCanceller MUSHROOM_CANCELLER = new MushroomFeatureCanceller<>(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID,"mushroom"), HugeMushroomFeatureConfiguration.class){
+    public static final FeatureCanceller MUSHROOM_CANCELLER = new MushroomFeatureCanceller<>(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID,"mushroom"), HugeMushroomFeatureConfiguration.class){
         @Override
         public boolean shouldCancel(final ConfiguredFeature<?, ?> configuredFeature, final BiomePropertySelectors.NormalFeatureCancellation featureCancellations) {
-            final ResourceLocation featureRegistryName = BuiltInRegistries.FEATURE.getKey(configuredFeature.feature());
+            final Identifier featureRegistryName = BuiltInRegistries.FEATURE.getKey(configuredFeature.feature());
             if (featureRegistryName == null) {return false;}
 
             if (configuredFeature.config() instanceof HugeMushroomFeatureConfiguration) {

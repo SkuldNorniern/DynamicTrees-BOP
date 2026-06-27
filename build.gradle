@@ -58,12 +58,19 @@ runs {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+sourceSets.main.java {
+    exclude 'com/dtteam/dtbop/DTBOPPlusRegistries.java'
+    exclude 'com/dtteam/dtbop/block/GlowShroomCapProperties.java'
+    exclude 'com/dtteam/dtbop/tree/GlowshroomSpecies.java'
+}
+
 dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
 
     //DynamicTrees
     implementation "com.dtteam.dynamictrees:dynamictrees-neoforge-" + project.minecraft_version + ":" + project.dynamicTreesVersion
-    implementation "com.dtteam.dynamictreesplus:DynamicTreesPlus:" + project.dynamicTreesPlusVersion
+    // Dynamic Trees Plus does not have a 26.1.2-compatible jar in this workspace yet.
+    // Keep DT+ JSON data guarded by only_if_loaded, but exclude the optional Java glue.
     //implementation "curse.maven:dynamictrees-252818:6111832"
 
     //DynmaicTrees Tools/Utilities

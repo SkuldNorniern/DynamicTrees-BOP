@@ -17,7 +17,7 @@ import com.dtteam.dynamictrees.block.CommonVoxelShapes;
 import com.dtteam.dynamictrees.worldgen.featurecancellation.MushroomFeatureCanceller;
 import com.dtteam.dynamictrees.event.RegistryEvent;
 import net.minecraft.core.Holder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -25,7 +25,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.common.Tags;
@@ -36,9 +35,6 @@ import com.dtteam.dtbop.genfeature.DTBOPGenFeatures;
 import com.dtteam.dtbop.growthlogic.DTBOPGrowthLogicKits;
 import com.dtteam.dtbop.tree.*;
 
-import java.util.Objects;
-
-@EventBusSubscriber(bus=EventBusSubscriber.Bus.MOD)
 public class DTBOPRegistries {
 
     public static final VoxelShape GLOWSHROOM_AGE0 = Shapes.create(0, 0, 0, 1, 0.75, 1);
@@ -49,10 +45,10 @@ public class DTBOPRegistries {
     public static final VoxelShape TOADSTOOL = Shapes.or(CommonVoxelShapes.SAPLING_TRUNK, TOADSTOOL_CAP);
 
     public static void setup() {
-        CommonVoxelShapes.SHAPES.put(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "glowshroom_age0").toString(), GLOWSHROOM_AGE0);
-        CommonVoxelShapes.SHAPES.put(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "toadstool_age0").toString(), TOADSTOOL_AGE0);
-        CommonVoxelShapes.SHAPES.put(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "round_short_mushroom").toString(), ROUND_SHORT_MUSHROOM);
-        CommonVoxelShapes.SHAPES.put(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "toadstool").toString(), TOADSTOOL);
+        CommonVoxelShapes.SHAPES.put(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "glowshroom_age0").toString(), GLOWSHROOM_AGE0);
+        CommonVoxelShapes.SHAPES.put(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "toadstool_age0").toString(), TOADSTOOL_AGE0);
+        CommonVoxelShapes.SHAPES.put(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "round_short_mushroom").toString(), ROUND_SHORT_MUSHROOM);
+        CommonVoxelShapes.SHAPES.put(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "toadstool").toString(), TOADSTOOL);
     }
 
     @SubscribeEvent
@@ -79,17 +75,17 @@ public class DTBOPRegistries {
     @SubscribeEvent
     public static void registerLeavesPropertiesTypes(TypeRegistryEvent<LeavesProperties> event) {
         if (event.isEntryOfType(LeavesProperties.class)){
-            event.registerType(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "cobweb"), CobwebLeavesProperties.TYPE);
+            event.registerType(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "cobweb"), CobwebLeavesProperties.TYPE);
         }
     }
 
     @SubscribeEvent
     public static void registerSpeciesTypes(final TypeRegistryEvent<Species> event) {
         if (event.isEntryOfType(Species.class)){
-            event.registerType(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "twiglet"), TwigletSpecies.TYPE);
-            event.registerType(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "poplar"), PoplarSpecies.TYPE);
-            event.registerType(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "cypress"), CypressSpecies.TYPE);
-            event.registerType(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "generates_on_stone"), GenOnStoneSpecies.TYPE);
+            event.registerType(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "twiglet"), TwigletSpecies.TYPE);
+            event.registerType(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "poplar"), PoplarSpecies.TYPE);
+            event.registerType(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "cypress"), CypressSpecies.TYPE);
+            event.registerType(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "generates_on_stone"), GenOnStoneSpecies.TYPE);
         }
     }
 
@@ -97,11 +93,11 @@ public class DTBOPRegistries {
     public static void onBlocksRegistry(final RegisterEvent event) {
         Bush.INSTANCES.forEach(Bush::setup);
 
-        final Species floweringOak = Species.REGISTRY.get(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_oak"));
-        final Species floweringAppleOak = Species.REGISTRY.get(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_apple_oak"));
-        final Species infested = Species.REGISTRY.get(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "infested"));
+        final Species floweringOak = Species.REGISTRY.get(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_oak"));
+        final Species floweringAppleOak = Species.REGISTRY.get(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_apple_oak"));
+        final Species infested = Species.REGISTRY.get(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "infested"));
 
-            LeavesProperties floweringLeaves = LeavesProperties.REGISTRY.get(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_oak"));
+            LeavesProperties floweringLeaves = LeavesProperties.REGISTRY.get(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "flowering_oak"));
         if (floweringOak.isValid() && floweringLeaves.isValid()) {
             floweringLeaves.setFamily(floweringOak.getFamily());
             floweringOak.addValidLeafBlocks(floweringLeaves);
@@ -110,7 +106,7 @@ public class DTBOPRegistries {
             if (floweringLeaves.isValid()) floweringAppleOak.addValidLeafBlocks(floweringLeaves);
 
         if (infested.isValid()) {
-            LeavesProperties silkLeaves = LeavesProperties.REGISTRY.get(ResourceLocation.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "silk"));
+            LeavesProperties silkLeaves = LeavesProperties.REGISTRY.get(Identifier.fromNamespaceAndPath(DynamicTreesBOP.MOD_ID, "silk"));
             infested.addValidLeafBlocks(silkLeaves);
         }
     }

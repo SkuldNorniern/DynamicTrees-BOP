@@ -11,7 +11,7 @@ import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dynamictrees.api.voxmap.SimpleVoxmap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import com.dtteam.dtbop.cell.DTBOPLeafClusters;
@@ -20,12 +20,12 @@ public class PoplarSpecies extends Species {
 
     public static final TypedRegistry.EntryType<Species> TYPE = createDefaultType(PoplarSpecies::new);
 
-    public PoplarSpecies(ResourceLocation name, Family family, LeavesProperties leavesProperties) {
+    public PoplarSpecies(Identifier name, Family family, LeavesProperties leavesProperties) {
         super(name, family, leavesProperties);
     }
 
     @Override
-    public NodeInspector getNodeInflator(SimpleVoxmap leafMap) {
+    public NodeInspector getNodeInflator(SimpleVoxmap leafMap, int radius) {
         return new NodeInflatorPoplar(this, leafMap);
     }
 
@@ -66,7 +66,7 @@ public class PoplarSpecies extends Species {
                 for (Direction dir : Direction.values()) {
                     if (!dir.equals(fromDir)) { // Don't count where the signal originated from
 
-                        BlockPos dPos = pos.offset(dir.getNormal());
+                        BlockPos dPos = pos.offset(dir.getUnitVec3i());
 
                         if (dPos.equals(last)) { // or the branch we just came back from
                             isTwig = false; // on the return journey if the block we just came from is a branch we are obviously not the endpoint(twig)

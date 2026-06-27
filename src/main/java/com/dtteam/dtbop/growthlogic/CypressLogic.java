@@ -10,12 +10,12 @@ import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dynamictrees.utility.CoordUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.Level;
 
 public class CypressLogic extends GrowthLogicKit {
 
-    public CypressLogic(ResourceLocation registryName) {
+    public CypressLogic(Identifier registryName) {
         super(registryName);
     }
 
@@ -31,7 +31,7 @@ public class CypressLogic extends GrowthLogicKit {
             if (signal.energy >= 6) {
                 if (signal.numSteps % 3 == 0) {
                     for (Direction dir : CoordUtils.HORIZONTALS) {
-                        if (TreeHelper.isBranch(context.level().getBlockState(context.pos().offset(dir.getNormal())))) {
+                        if (TreeHelper.isBranch(context.level().getBlockState(context.pos().offset(dir.getUnitVec3i())))) {
                             sideProb = 0;
                             branchSide = dir;
                         }

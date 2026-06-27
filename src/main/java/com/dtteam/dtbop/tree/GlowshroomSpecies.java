@@ -8,7 +8,7 @@ import com.dtteam.dynamictrees.tree.species.Species;
 import com.dtteam.dynamictreesplus.block.mushroom.CapProperties;
 import com.dtteam.dynamictreesplus.tree.HugeMushroomSpecies;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -16,7 +16,7 @@ public class GlowshroomSpecies extends HugeMushroomSpecies {
 
     public static final TypedRegistry.EntryType<Species> TYPE = createDefaultMushroomType(GlowshroomSpecies::new);
 
-    public GlowshroomSpecies(ResourceLocation name, Family family, CapProperties capProperties) {
+    public GlowshroomSpecies(Identifier name, Family family, CapProperties capProperties) {
         super(name, family, capProperties);
     }
 
