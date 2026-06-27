@@ -1,6 +1,11 @@
 {
   "sources": [
     {
+      "type": "minecraft:directory",
+      "prefix": "block/",
+      "source": "block"
+    },
+    {
       "type": "dynamictrees:thick_branch_rings",
       "resource": "biomesoplenty:block/dead_log_top"
     },
