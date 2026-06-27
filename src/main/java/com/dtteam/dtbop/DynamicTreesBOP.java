@@ -10,7 +10,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(DynamicTreesBOP.MOD_ID)
@@ -19,7 +18,6 @@ public class DynamicTreesBOP {
 
     public DynamicTreesBOP(IEventBus eventBus, ModContainer container) {
         eventBus.addListener(this::commonSetup);
-        eventBus.addListener(this::gatherData);
         eventBus.register(DTBOPRegistries.class);
 
         NeoForgeRegistryHandler.setup(MOD_ID, eventBus);
@@ -27,9 +25,6 @@ public class DynamicTreesBOP {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         DTBOPRegistries.setup();
-    }
-
-    private void gatherData(final GatherDataEvent event) {
     }
 
     public static Identifier location (String name){
