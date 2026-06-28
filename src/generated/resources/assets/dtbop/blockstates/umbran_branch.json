@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/umbran_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:umbran",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/umbran_log",
+                                               "rings":  "biomesoplenty:block/umbran_log_top"
+                                           }
+                          }
+                 }
 }

@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/jacaranda_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:jacaranda",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/jacaranda_log",
+                                               "rings":  "biomesoplenty:block/jacaranda_log_top"
+                                           }
+                          }
+                 }
 }

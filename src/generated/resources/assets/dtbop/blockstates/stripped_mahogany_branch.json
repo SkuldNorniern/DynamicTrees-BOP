@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/stripped_mahogany_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:mahogany",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/stripped_mahogany_log",
+                                               "rings":  "biomesoplenty:block/stripped_mahogany_log_top"
+                                           }
+                          }
+                 }
 }

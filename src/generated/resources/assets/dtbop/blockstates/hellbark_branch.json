@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/hellbark_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:hellbark",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/hellbark_log",
+                                               "rings":  "biomesoplenty:block/hellbark_log_top"
+                                           }
+                          }
+                 }
 }

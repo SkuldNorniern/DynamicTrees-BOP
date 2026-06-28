@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/stripped_pine_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:pine",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/stripped_pine_log",
+                                               "rings":  "biomesoplenty:block/stripped_pine_log_top"
+                                           }
+                          }
+                 }
 }

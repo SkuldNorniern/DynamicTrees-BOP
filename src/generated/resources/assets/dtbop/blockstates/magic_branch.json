@@ -1,7 +1,12 @@
-{
-  "variants": {
-    "": {
-      "model": "dtbop:block/magic_branch"
-    }
-  }
+﻿{
+    "variants":  {
+                     "":  {
+                              "type":  "dynamictrees:branch",
+                              "family":  "dtbop:magic",
+                              "textures":  {
+                                               "bark":  "biomesoplenty:block/magic_log",
+                                               "rings":  "biomesoplenty:block/magic_log_top"
+                                           }
+                          }
+                 }
 }
