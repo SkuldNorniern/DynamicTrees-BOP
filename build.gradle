@@ -80,9 +80,9 @@ dependencies {
     runtimeOnly "curse.maven:suggestion-provider-fix-469647:5598604"
 
     //Biomes O Plenty
-    implementation "curse.maven:terrablender-940057:6054947"
-    implementation "curse.maven:biomes-o-plenty-220318:5855568"
-    implementation "curse.maven:glitchcore-955399:5660740"
+    implementation "curse.maven:terrablender-neoforge-940057:8384529"
+    implementation files(rootProject.file("../BiomesOPlenty-neoforge-${minecraft_version}-${bopVersion}.jar"))
+    implementation files(rootProject.file("../GlitchCore-neoforge-${minecraft_version}-${glitchCoreVersion}.jar"))
 }
 
 def changelogFile = file("build/changelog.txt")
