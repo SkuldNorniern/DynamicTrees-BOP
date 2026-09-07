@@ -73,12 +73,6 @@ dependencies {
     // Keep DT+ JSON data guarded by only_if_loaded, but exclude the optional Java glue.
     //implementation "curse.maven:dynamictrees-252818:6111832"
 
-    //DynmaicTrees Tools/Utilities
-    runtimeOnly "curse.maven:jade-324717:6011258"
-    runtimeOnly "curse.maven:jei-238222:5846880"
-    runtimeOnly "curse.maven:cc-tweaked-282001:5714512"
-    runtimeOnly "curse.maven:suggestion-provider-fix-469647:5598604"
-
     //Biomes O Plenty
     implementation "curse.maven:terrablender-neoforge-940057:8384529"
     implementation files(rootProject.file("../BiomesOPlenty-neoforge-${minecraft_version}-${bopVersion}.jar"))
