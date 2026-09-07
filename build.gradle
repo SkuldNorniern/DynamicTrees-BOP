@@ -50,9 +50,7 @@ runs {
     clientData {
         arguments.addAll '--mod', project.mod_id, '--all',
                 '--output', file('src/generated/resources/').getAbsolutePath(),
-                '--existing', file('src/main/resources').getAbsolutePath(),
-                "--existing-mod", "dynamictrees",
-                "--existing-mod", "biomesoplenty"
+                '--existing', file('src/main/resources').getAbsolutePath()
     }
 }
 
