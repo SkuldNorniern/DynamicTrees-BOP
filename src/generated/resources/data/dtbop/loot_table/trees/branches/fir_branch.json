@@ -14,7 +14,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "biomesoplenty:palm_log"
+          "name": "biomesoplenty:fir_log"
         }
       ],
       "rolls": 1.0
@@ -38,5 +38,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dtbop:trees/branches/palm"
+  "random_sequence": "dtbop:trees/branches/fir_branch"
 }

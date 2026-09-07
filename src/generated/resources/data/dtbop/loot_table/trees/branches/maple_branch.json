@@ -14,7 +14,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "biomesoplenty:umbran_log"
+          "name": "biomesoplenty:maple_log"
         }
       ],
       "rolls": 1.0
@@ -38,5 +38,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dtbop:trees/branches/umbran"
+  "random_sequence": "dtbop:trees/branches/maple_branch"
 }

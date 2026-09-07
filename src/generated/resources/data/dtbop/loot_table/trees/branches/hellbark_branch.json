@@ -14,7 +14,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "biomesoplenty:stripped_mahogany_log"
+          "name": "biomesoplenty:hellbark_log"
         }
       ],
       "rolls": 1.0
@@ -38,5 +38,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dtbop:trees/branches/stripped_mahogany"
+  "random_sequence": "dtbop:trees/branches/hellbark_branch"
 }
