@@ -15,7 +15,7 @@
         "#forge:is_wet": 0.75
     },
     "perfect_biomes": { "type": "biomesoplenty:aspen_glade" },
-    "primitive_sapling":"biomesoplenty:aspen_sapling",
+    "primitive_sapling":"biomesoplenty:yellow_maple_sapling",
     "lang_overrides": {
         "seed": "Aspen Catkin"
     }
