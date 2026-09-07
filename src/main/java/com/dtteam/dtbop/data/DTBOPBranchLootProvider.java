@@ -11,6 +11,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
@@ -55,9 +56,18 @@ public final class DTBOPBranchLootProvider extends LootTableProvider {
                                     + Identifier.fromNamespaceAndPath("biomesoplenty", logName));
                             return;
                         }
+                        final Item stick = familyName.equals("dead")
+                                ? BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath(
+                                        "biomesoplenty", "dead_branch"))
+                                : branch.getFamily().getStick();
+                        if (stick == Items.AIR) {
+                            invalidPrimitiveLogs.add(BuiltInRegistries.BLOCK.getKey(branch)
+                                    + ": missing stick item");
+                            return;
+                        }
                         output.accept(ResourceKey.create(Registries.LOOT_TABLE, branch.getLootTableName()),
                                 DTLootTableBuilder.createBranchDrops(
-                                        primitiveLog, branch.getFamily().getStick(), registries));
+                                        primitiveLog, stick, registries));
                     });
             if (!invalidPrimitiveLogs.isEmpty()) {
                 throw new IllegalStateException("Primitive logs have no items: "
