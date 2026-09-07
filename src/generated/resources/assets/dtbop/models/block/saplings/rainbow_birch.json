@@ -2,7 +2,7 @@
   "parent": "dynamictrees:block/smartmodel/sapling",
   "render_type": "cutout_mipped",
   "textures": {
-    "leaves": "biomesoplenty:block/rainbow_birch_leaves",
+    "leaves": "minecraft:block/birch_leaves",
     "log": "minecraft:block/birch_log"
   }
 }

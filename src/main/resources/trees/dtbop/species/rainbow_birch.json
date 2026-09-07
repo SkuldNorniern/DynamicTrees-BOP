@@ -12,7 +12,7 @@
     "forest": 1.05
   },
   "perfect_biomes": { "types": [ "lush", "magical", "overworld" ] },
-  "primitive_sapling": "biomesoplenty:rainbow_birch_sapling",
+  "primitive_sapling": "minecraft:birch_sapling",
   "features" : [
     "bee_nest"
   ],
